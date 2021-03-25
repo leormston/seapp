@@ -1,21 +1,32 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-
+import { SafeAreaView, StyleSheet, Text, View, Button, ScrollView} from 'react-native';
+import AdminMenu from './assets/screens/admin-menu';
+import UserMenu from './assets/screens/user-menu';
+import Users from './assets/screens/users';
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+    <ScrollView>
+    <SafeAreaView style={styles.container}>
+      
       <StatusBar style="auto" />
-    </View>
+      <Text style={styles.headings}>Admin Panel</Text>
+      <AdminMenu />
+      <UserMenu />
+      <Users />
+    </SafeAreaView>
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
+    height: "100%",
+    backgroundColor: 'salmon',
     alignItems: 'center',
-    justifyContent: 'center',
   },
+  headings: {
+    fontSize: 50,
+  }
 });
+ 
